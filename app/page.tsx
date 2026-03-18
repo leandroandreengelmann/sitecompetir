@@ -35,7 +35,7 @@ import { Reveal } from "@/components/landing/reveal"
 /* ─── Hero ────────────────────────────────────────────────────────────────── */
 function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20 pb-24 overflow-hidden">
+    <section className="relative flex flex-col justify-center items-center text-center px-6 pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none"
@@ -48,7 +48,7 @@ function Hero() {
       />
 
       <div className="relative max-w-4xl mx-auto">
-        <h1 className="text-[clamp(40px,6vw,76px)] font-black text-[#181D27] leading-[1.05] tracking-tight mb-6">
+        <h1 className="text-[clamp(28px,6vw,76px)] font-black text-[#181D27] leading-[1.05] tracking-tight mb-6">
           Seus campeonatos de JiuJitsu,{" "}
           <span className="transition-colors duration-700" style={{ color: "var(--c-accent)" }}>
             profissionalizados.
@@ -60,7 +60,7 @@ function Hero() {
           Sem planilha, sem bagunça, sem dor de cabeça.
         </p>
 
-        <div className="flex flex-wrap gap-3 justify-center mb-16">
+        <div className="flex flex-wrap gap-3 justify-center mb-8 md:mb-16">
           <a
             href="https://wa.me/556697249532"
             target="_blank"
@@ -68,7 +68,8 @@ function Hero() {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-base font-semibold text-white transition-all duration-700 hover:opacity-90 hover:-translate-y-0.5"
             style={{ background: "var(--c-accent)" }}
           >
-            Crie seu primeiro evento grátis, fale com a gente
+            <span className="hidden sm:inline">Crie seu primeiro evento grátis, fale com a gente</span>
+            <span className="sm:hidden">Fale com a gente</span>
             <ArrowRight size={16} weight="bold" />
           </a>
         </div>
@@ -332,7 +333,7 @@ const PLAN_FEATURES = [
 
 function Pricing() {
   return (
-    <section id="preços" className="py-28 px-6 bg-white">
+    <section id="preços" className="py-16 md:py-28 px-6 bg-white">
       <div className="max-w-3xl mx-auto text-center">
         <Reveal>
           <p className="text-sm font-semibold uppercase tracking-widest mb-3 transition-colors duration-700" style={{ color: "var(--c-accent)" }}>
@@ -351,7 +352,7 @@ function Pricing() {
             className="rounded-xl border-2 bg-white overflow-hidden text-left transition-all duration-700"
             style={{ borderColor: "var(--c-accent)" }}
           >
-            <div className="px-8 pt-8 pb-6 border-b border-[#E9EAEB]">
+            <div className="px-5 sm:px-8 pt-6 sm:pt-8 pb-6 border-b border-[#E9EAEB]">
               <div className="flex items-end gap-3 mb-1">
                 <span className="text-5xl font-black text-[#181D27]">R$ 0</span>
                 <span className="text-[#717680] mb-1.5">por mês</span>
@@ -361,7 +362,7 @@ function Pricing() {
               </p>
             </div>
 
-            <div className="px-8 py-6">
+            <div className="px-5 sm:px-8 py-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                 {PLAN_FEATURES.map((f) => (
                   <div key={f} className="flex items-center gap-2.5">
@@ -378,7 +379,8 @@ function Pricing() {
                 className="flex items-center justify-center gap-2 w-full py-3 rounded-lg text-base font-semibold text-white transition-all duration-700 hover:opacity-90 hover:-translate-y-0.5"
                 style={{ background: "var(--c-accent)" }}
               >
-                Crie seu primeiro evento grátis, fale com a gente
+                <span className="hidden sm:inline">Crie seu primeiro evento grátis, fale com a gente</span>
+                <span className="sm:hidden">Fale com a gente no WhatsApp</span>
                 <ArrowRight size={16} weight="bold" />
               </a>
             </div>
@@ -437,7 +439,7 @@ function CTAFinal() {
   return (
     <section
       id="comecar"
-      className="py-28 px-6 text-white transition-all duration-700"
+      className="py-16 md:py-28 px-6 text-white transition-all duration-700"
       style={{ background: "var(--c-accent)" }}
     >
       <div className="max-w-3xl mx-auto text-center">
@@ -458,7 +460,8 @@ function CTAFinal() {
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg text-base font-semibold bg-white hover:bg-white/90 transition-all hover:-translate-y-0.5"
               style={{ color: "var(--c-accent)" }}
             >
-              Crie seu primeiro evento grátis, fale com a gente
+              <span className="hidden sm:inline">Crie seu primeiro evento grátis, fale com a gente</span>
+              <span className="sm:hidden">Fale com a gente</span>
               <ArrowRight size={16} weight="bold" />
             </a>
           </div>

@@ -22,12 +22,20 @@ export function NavClient() {
         backdropFilter: scrolled ? "blur(12px)" : "none",
       }}
     >
-      <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2">
+      {/* mobile: logo centralizada, sem botão */}
+      <div className="md:hidden px-6 h-16 flex items-center justify-center">
+        <a href="#">
+          <Image src="/logo.png" alt="Competir Logo" width={240} height={60} className="w-auto h-10" priority />
+        </a>
+      </div>
+
+      {/* desktop: logo à esquerda, nav + botão à direita */}
+      <div className="hidden md:flex mx-auto max-w-6xl px-6 h-16 items-center justify-between">
+        <a href="#">
           <Image src="/logo.png" alt="Competir Logo" width={240} height={60} className="w-auto h-12" priority />
         </a>
 
-        <nav className="hidden md:flex items-center gap-7">
+        <nav className="flex items-center gap-7">
           {["Funcionalidades", "Como funciona", "Preços"].map((l) => (
             <a
               key={l}
@@ -39,18 +47,16 @@ export function NavClient() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
-          <a
-            href="https://wa.me/556697249532"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold text-white transition-all duration-700 hover:opacity-90"
-            style={{ background: "var(--c-accent)" }}
-          >
-            Crie seu primeiro evento grátis, fale com a gente
-            <ArrowRight size={14} weight="bold" />
-          </a>
-        </div>
+        <a
+          href="https://wa.me/556697249532"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold text-white transition-all duration-700 hover:opacity-90"
+          style={{ background: "var(--c-accent)" }}
+        >
+          Crie seu primeiro evento grátis, fale com a gente
+          <ArrowRight size={14} weight="bold" />
+        </a>
       </div>
     </header>
   )
